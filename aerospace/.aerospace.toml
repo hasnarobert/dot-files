@@ -71,7 +71,12 @@ on-mode-changed = []
 
 # Notify Sketchybar whenever a new window is detected (catches new window of an already-running app)
 [[on-window-detected]]
+check-further-callbacks = true
 run = ['exec-and-forget sketchybar --trigger aerospace_workspace_change']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
